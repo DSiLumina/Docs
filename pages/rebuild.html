@@ -1,0 +1,24 @@
+<h1>
+  Rebuild the DSi
+</h1>
+<p>
+  DSiLumina can rebuild the DSi, It's replace the DSi's firmware., You can rebuild the DSi with the following steps(now use cli)
+
+</p>
+<ol>
+  <li>
+    Run the following command to rebuild the DSi.
+    <pre>
+    node cli.js rebuild && node cli.js stamp && cd /sdcard/ && cp -r /home/%username%/.DSiLumina/DSi/ /sdcard/ && ./check.sh | tee -a /home/%username%/.DSiLumina/DSi/log.txt
+    </pre>
+  </li>
+  <li>
+    Open <code>./dsilumina</code> and select "DSi -> LuminaDS(i)" to reboot the DSi and automatic change the Patched DSi to LuminaDS(i).
+  </li>
+  <li>
+    If you want to rebuild the DSi with the original firmware, you can run the following command.
+    <pre>
+      cd ../ && node cli.js fetch -e &lt;nand/nand-e/nand-j/nand-j-e&gt; && cd /sdcard/ && cp -r /home/%username%/.DSiLumina/DSi/ /sdcard/ && rm -rf /home/%username%/.DSiLumina/DSi/ && ./check.sh | tee -a /home/%username%/.DSiLumina/DSi/log.txt
+    </pre>
+  </li>
+</ol>

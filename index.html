@@ -1,16 +1,41 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+    DSiLumina Docs
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- favicon -->
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/159103570?s=200&v=4" type="image/x-icon">
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">DSiLumina</a>
+      </div>
+    </nav>
+    <br/>    <br/>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  Hello world
-  <script src="script.js"></script>
-</body>
-
+    <div id="id">
+      <pre>
+Opening pages.., You need a time to load.
+      </pre>
+    </div>
+    <footer class="footer">
+      Powered by HIGHI, a high-performance, high-quality, and high-speed docs web framework. | Length: <span id="length">0</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search).get('page');
+        const id = document.getElementById('id');
+        const length = document.getElementById('length');
+      if (urlParams){
+        fetch(`pages/${urlParams}.html`).then(res => res.text()).then(res =>{id.innerHTML = res; length.innerHTML = res.length;});
+      } else {
+        fetch('pages/index.html').then(res => res.text()).then(res =>{id.innerHTML = res; length.innerHTML = res.length;});
+      }
+    </script>
+  </body>
 </html>
